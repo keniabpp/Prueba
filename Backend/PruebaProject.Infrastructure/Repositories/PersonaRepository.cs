@@ -33,9 +33,14 @@ namespace PruebaProject.Infrastructure.Repositories
 
         public async Task<IEnumerable<Persona>> ObtenerTodosAsync()
         {
-            return await _context.Personas
-            .Include(p => p.Usuario).ToListAsync();
+          var personas = await _context.Personas.FromSqlRaw("EXEC sp_ConsultarPersonas")
+         .AsNoTracking()          
+         .ToListAsync();
+
+         return personas;
         }
+
+
 
         
     }

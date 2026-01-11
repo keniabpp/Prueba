@@ -78,6 +78,9 @@
                                 <th>Identificación</th>
                                 <th>Tipo ID</th>
                                 <th>Fecha Creación</th>
+                                <th>Identificación Completa</th>
+                                <th>Nombre Completo</th>
+
                               </tr>
                             </thead>
                             <tbody>
@@ -90,6 +93,9 @@
                                   <td>{{ persona.numeroIdentificacion }}</td>
                                   <td>{{ persona.tipoIdentificacion }}</td>
                                   <td>{{ persona.fechaCreacion | date:'dd/MM/yyyy' }}</td>
+                                  <td>{{ persona.identificacionCompleta }}</td>
+                                  <td>{{ persona.nombreCompleto }}</td>
+
                                 </tr>
                               }
                             </tbody>

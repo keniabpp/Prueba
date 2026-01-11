@@ -7,4 +7,6 @@ export interface Persona {
     tipoIdentificacion: string;
     email: string;
     fechaCreacion?: Date;
+    identificacionCompleta?: string;
+    nombreCompleto?: string;
 }

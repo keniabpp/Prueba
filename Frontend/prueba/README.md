@@ -1,59 +1,119 @@
-# Prueba
+# PruebaProject - Frontend Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
+Sistema de Gestión de Personas desarrollado con Angular 18 y Bootstrap.
 
-## Development server
+## 🚀 Tecnologías Utilizadas
 
-To start a local development server, run:
+- **Angular 18**
+- **TypeScript**
+- **Bootstrap 5** (UI/Styling)
+- **Bootstrap Icons**
+- **Standalone Components**
+- **FormsModule** (Template-driven forms)
+- **Nueva sintaxis de control de flujo**: `@if`, `@for`
+
+## ✨ Funcionalidades
+
+- 🔐 **Autenticación** (Login/Logout)
+- 📝 **Registro de personas** con validaciones
+- 👥 **Creación de usuarios** con contraseñas seguras
+- 📊 **Dashboard** con lista de personas
+- 👁️ **Mostrar/ocultar contraseña**
+- ✅ **Validaciones** en frontend y backend
+- 📱 **Responsive design**
+
+## 🔧 Instalación y Ejecución
+
+### Pre-requisitos
+
+- Node.js 18+
+- npm
+- Angular CLI: `npm install -g @angular/cli`
+
+### 1. Instalar dependencias
+
+```bash
+npm install
+```
+
+### 2. Ejecutar servidor de desarrollo
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La aplicación estará disponible en `http://localhost:4200/`
 
-## Code scaffolding
+### 3. Asegúrate de que el Backend esté ejecutándose
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+El frontend se conecta automáticamente al backend en `http://localhost:5218`
 
-```bash
-ng generate component component-name
+## 📱 Rutas de la Aplicación
+
+- `/` - Página principal
+- `/login` - Iniciar sesión
+- `/register` - Registro de personas y usuarios
+- `/dashboard` - Panel principal (requiere autenticación)
+
+## 🏗️ Estructura del Proyecto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── auth/
+│   │   │   ├── login/
+│   │   │   └── register/
+│   │   └── dashboard/
+│   ├── services/
+│   │   └── persona.service.ts
+│   ├── Models/
+│   │   ├── persona.model.ts
+│   │   └── usuario.model.ts
+│   └── environments/
+└── assets/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🛠️ Comandos Disponibles
 
+### Desarrollo
 ```bash
-ng generate --help
+ng serve               # Servidor de desarrollo
+ng build              # Build de producción
+ng build --watch      # Build con watch mode
 ```
 
-## Building
-
-To build the project run:
-
+### Testing
 ```bash
-ng build
+ng test               # Unit tests con Karma
+ng e2e               # End-to-end tests
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### Generación de código
 ```bash
-ng test
+ng generate component nombre    # Generar componente
+ng generate service nombre      # Generar servicio
+ng generate --help             # Ver todas las opciones
 ```
 
-## Running end-to-end tests
+## 🔗 API Endpoints Utilizados
 
-For end-to-end (e2e) testing, run:
+- `GET /api/persona` - Obtener personas
+- `POST /api/persona/crear` - Crear persona
+- `POST /api/persona/crear-usuario` - Crear usuario
+- `POST /api/persona/login` - Login
 
-```bash
-ng e2e
-```
+## 🎨 Estilos y UI
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- **Bootstrap 5** para diseño responsive
+- **Bootstrap Icons** para iconografía
+- **CSS personalizado** para estilos específicos
 
-## Additional Resources
+## 🧑‍💻 Desarrollado por
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Kenia Beatriz Palomeque Pino**  
+📧 keniabpp@outlook.com
+
+---
+
+> Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 18.x
