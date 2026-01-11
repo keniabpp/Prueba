@@ -30,13 +30,20 @@ Sistema de Gestión de Personas desarrollado con Angular 18 y Bootstrap.
 - npm
 - Angular CLI: `npm install -g @angular/cli`
 
-### 1. Instalar dependencias
+### 1. Navegar al directorio del frontend
+
+```bash
+cd frontend
+cd prueba ng serve
+```
+
+### 2. Instalar dependencias
 
 ```bash
 npm install
 ```
 
-### 2. Ejecutar servidor de desarrollo
+### 3. Ejecutar servidor de desarrollo
 
 ```bash
 ng serve
@@ -44,7 +51,7 @@ ng serve
 
 La aplicación estará disponible en `http://localhost:4200/`
 
-### 3. Asegúrate de que el Backend esté ejecutándose
+### 4. Asegúrate de que el Backend esté ejecutándose
 
 El frontend se conecta automáticamente al backend en `http://localhost:5218`
 
