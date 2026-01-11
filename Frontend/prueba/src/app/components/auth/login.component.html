@@ -1,0 +1,37 @@
+
+<div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+
+  <h2 class="mb-4">Inicia sesion</h2>
+
+  
+
+  @if (errorMessage) {
+    <div class="alert alert-danger w-100" style="max-width: 400px;">
+      {{ errorMessage }}
+    </div>
+  }
+
+  <form class="w-100" style="max-width: 400px;" >
+    <div class="mb-3">
+      <label class="form-label">NombreUsuario</label>
+      <input [(ngModel)]="nombreUsuario" type="text" id="nombreUsuario" name="nombreUsuario" class="form-control" placeholder="Enter nombre de usuario">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Contraseña</label>
+      <div class="input-group">
+        <input [(ngModel)]="pass" [type]="showPassword ? 'text' : 'password'" id="pass" name="pass" class="form-control" placeholder="Enter contraseña">
+        <button type="button" class="btn btn-outline-secondary" (click)="togglePasswordVisibility()">
+          <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+        </button>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary w-100" (click)="login()">Submit</button>
+
+    <hr>
+
+    <button type="button" class="btn btn-primary w-100" (click)="navigateToRegister()"> Registrarse</button>
+  </form>
+
+</div>

@@ -1,0 +1,89 @@
+<div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+
+  <h2 class="mb-4">Crear Persona</h2>
+
+  <!-- Mensajes de éxito y error -->
+  @if (successMessage) {
+    <div class="alert alert-success w-100" style="max-width: 400px;">
+      <div class="d-flex justify-content-between align-items-center">
+        <span>{{ successMessage }}</span>
+        
+        <button (click)="navigateUsuario()" class="btn btn-sm btn-success">Crear Usuario</button>
+      </div>
+    </div>
+  }
+
+  @if (errorMessage) {
+    <div class="alert alert-danger w-100" style="max-width: 400px;">
+      {{ errorMessage }}
+    </div>
+  }
+
+  <form class="w-100" style="max-width: 400px;" >
+    <div class="mb-3">
+      <label class="form-label">Nombres</label>
+      <input [(ngModel)]="nuevaPersona.nombres" type="text" id="nombres" name="nombres" class="form-control" placeholder="Enter nombres" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Apellidos</label>
+      <input [(ngModel)]="nuevaPersona.apellidos" type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Enter apellidos" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">numero de Identificacion</label>
+      <input [(ngModel)]="nuevaPersona.numeroIdentificacion" type="text" id="numeroIdentificacion" name="numeroIdentificacion" class="form-control" placeholder="Enter numero de Identificacion" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">tipo de Identificacion</label>
+      <input [(ngModel)]="nuevaPersona.tipoIdentificacion" type="text" id="tipoIdentificacion" name="tipoIdentificacion" class="form-control" placeholder="Enter tipo de Identificacion" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input [(ngModel)]="nuevaPersona.email" type="email" id="email" name="email" class="form-control" placeholder="Enter email" required>
+    </div>
+
+    
+
+    <button class="btn btn-primary w-100" (click)="addPersona()">Submit</button>
+  </form>
+
+</div>
+
+@if (showModal) {
+  <!-- Modal para crear usuario -->
+  <div class="modal d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Crear Usuario</h5>
+          <button type="button" class="btn-close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <!-- <div class="mb-3">
+              <label class="form-label">ID de Persona</label>
+              <input [(ngModel)]="nuevoUsuario.personaId" type="number" name="personaId" class="form-control" readonly>
+            </div> -->
+            <div class="mb-3">
+              <label class="form-label">Nombre de Usuario</label>
+              <input [(ngModel)]="nuevoUsuario.nombreUsuario" type="text" name="nombreUsuario" class="form-control" placeholder="Enter nombre de usuario" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Contraseña</label>
+              <div class="input-group">
+                <input [(ngModel)]="nuevoUsuario.pass" [type]="showPassword ? 'text' : 'password'" name="password" class="form-control" placeholder="contraseña (mínimo 8 caracteres, al menos un carácter especial)" required>
+                <button type="button" class="btn btn-outline-secondary" (click)="togglePasswordVisibility()">
+                  <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="crearUsuario()">Crear Usuario</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
