@@ -4,7 +4,7 @@ Sistema de Gestión de Personas desarrollado con Angular 18 y Bootstrap.
 
 ## 🚀 Tecnologías Utilizadas
 
-- **Angular 18**
+- **Angular 20**
 - **TypeScript**
 - **Bootstrap 5** (UI/Styling)
 - **Bootstrap Icons**
